@@ -1,17 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.6;netstandard2.0;net45;net46</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
+    <TargetFrameworks>netstandard2.1;netcoreapp3.1</TargetFrameworks>
+    <Configurations>Debug;Release;Server</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>K4os.Compression.LZ4</PackageId>
     <PackageTags>compression lz4</PackageTags>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DocumentationFile>bin\Release\K4os.Compression.LZ4.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
-  <Import Project="..\..\Common.targets" />
-  <Import Project="..\..\.paket\Paket.Restore.targets" />
+  <PropertyGroup Condition=" '$(Configuration)' == 'Server' ">
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
 </Project>
