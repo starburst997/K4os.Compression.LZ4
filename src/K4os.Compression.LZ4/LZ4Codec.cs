@@ -38,6 +38,7 @@ namespace K4os.Compression.LZ4
 			return encoded <= 0 ? -1 : encoded;
 		}
 
+#if NETSTANDARD2_1
 		/// <summary>Compresses data from one buffer into another.</summary>
 		/// <param name="source">Input buffer.</param>
 		/// <param name="target">Output buffer.</param>
@@ -56,6 +57,7 @@ namespace K4os.Compression.LZ4
 			fixed (byte* targetP = &MemoryMarshal.GetReference(target))
 				return Encode(sourceP, sourceLength, targetP, targetLength, level);
 		}
+#endif
 
 		/// <summary>Compresses data from one buffer into another.</summary>
 		/// <param name="source">Input buffer.</param>
@@ -98,6 +100,7 @@ namespace K4os.Compression.LZ4
 			return decoded <= 0 ? -1 : decoded;
 		}
 
+#if NETSTANDARD2_1
 		/// <summary>Decompresses data from given buffer.</summary>
 		/// <param name="source">Input buffer.</param>
 		/// <param name="target">Output buffer.</param>
@@ -114,7 +117,8 @@ namespace K4os.Compression.LZ4
 			fixed (byte* targetP = &MemoryMarshal.GetReference(target))
 				return Decode(sourceP, sourceLength, targetP, targetLength);
 		}
-
+#endif
+		
 		/// <summary>Decompresses data from given buffer.</summary>
 		/// <param name="source">Input buffer.</param>
 		/// <param name="sourceOffset">Input buffer offset.</param>
