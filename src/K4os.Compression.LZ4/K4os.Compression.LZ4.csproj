@@ -6,6 +6,11 @@
     <TargetFrameworks>net48;netstandard2.0;netstandard2.1;netcoreapp3.1</TargetFrameworks>
     <Configurations>Debug;Release;Server</Configurations>
     <Platforms>AnyCPU</Platforms>
+    <PackageVersion>1.2.2-beta</PackageVersion>
+    <Title>K4os.Compression.LZ4</Title>
+    <Description>Custom fork of K4os.Compression.LZ4</Description>
+    <RepositoryUrl>https://github.com/starburst997/K4os.Compression.LZ4</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>K4os.Compression.LZ4</PackageId>
